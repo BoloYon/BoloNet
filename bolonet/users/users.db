@@ -1,0 +1,10 @@
+{
+  IgiToyo = {
+    password = "Isaac",
+    admin = false,
+  },
+  BoloYon = {
+    admin = true,
+    password = "Matty",
+  },
+}
