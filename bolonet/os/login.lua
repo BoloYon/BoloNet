@@ -37,6 +37,32 @@ local function isPassValid(pass)
     return true
 end
 
+local function initDesktopDB(user, isAdmin)
+    --Open, read/ save contents, and close file
+    local tbl = G.files.getTable("/bolonet/system/desktop.db")
+
+    tbl[user] = {}
+    tbl[user].icons = {
+        Apps = {x = 2, y = 2},
+        Settings = {x = 10, y = 2},
+        Logout =  {x = 18, y = 2},
+        Shutdown = {x = 26, y = 2}
+    }
+    if isAdmin then
+        tbl[user].icons["Admin Menu"] = {x = 34, y = 2}
+    end
+
+    G.files.setTable("/bolonet/system/desktop.db", tbl)
+end
+
+
+--Main Functions
+
+--Initializes all things the user needs
+local function initUser(user, isAdmin)
+    initDesktopDB(user, isAdmin)
+end
+
 local function login()
     term.clear()
     --Open file for use
@@ -104,15 +130,7 @@ local function signUp()
     local user, pass, rePass, cancelled, content, users
 
     --Open file for username check and storage of user data
-    local file = fs.open("/bolonet/users/users.db", "r")
-    if file then
-        content = file.readAll() or ""
-        users = textutils.unserialize(content)
-        file.close()
-    else
-        G.logger.Log("ERROR", "Could not open 'users.db'")
-        error("Couldn't open users.db", 1)
-    end
+    local users = G.files.getTable("/bolonet/users/users.db")
 
     --Get username
     G.ui.GoBackText()
@@ -183,21 +201,9 @@ local function signUp()
         term.clear()
         G.ui.CalcCenter("Account successfully created!", 0, 1, write, colors.green)
         G.logger.Log("AUTH", "New account created: "..user)
+        initUser(user, users[user].admin)
         sleep(2)
     end
-end
-
-local function shutdown()
-    term.clear()
-    G.ui.CalcCenter("Shutting down in:", 0, -1, write, colors.yellow)
-
-    for i = 3, 1, -1 do
-        G.ui.CalcCenter(tostring(i), 0, 1, write, colors.red)
-        sleep(1)
-    end
-    G.logger.Log("SYSTEM", "BoloNet shutdown\n")
-    os.shutdown()
-    
 end
 
 local function signInUser()
@@ -257,7 +263,7 @@ local function drawMenu()
     local actions = {
     function() login() end,
     function() signUp() end,
-    function() shutdown() end}
+    function() shell.run("/bolonet/os/shutdown.lua") end}
 
     G.ui.Navigate(options, actions, "--Login Page--")
 

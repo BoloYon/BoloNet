@@ -49,7 +49,7 @@ function session.getUserPass()
         if users then 
             currentUserPass = users[session.GetUser()].password
         else
-            error("Users table was not found.", 1)
+            error("Users table was not found.", 2)
         end
     end
 

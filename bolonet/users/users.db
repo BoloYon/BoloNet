@@ -1,10 +1,10 @@
 {
   IgiToyo = {
-    password = "Isaac",
     admin = false,
+    password = "Isaac",
   },
   BoloYon = {
-    admin = true,
     password = "Matty",
+    admin = true,
   },
 }

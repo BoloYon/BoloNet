@@ -1,0 +1,46 @@
+{
+  BoloYon = {
+    icons = {
+      Settings = {
+        y = 2,
+        x = 10,
+      },
+      [ "Admin Menu" ] = {
+        y = 2,
+        x = 31,
+      },
+      Shutdown = {
+        y = 2,
+        x = 24,
+      },
+      Logout = {
+        y = 2,
+        x = 17,
+      },
+      Apps = {
+        y = 2,
+        x = 3,
+      },
+    },
+  },
+  IgiToyo = {
+    icons = {
+      Settings = {
+        y = 2,
+        x = 10,
+      },
+      Apps = {
+        y = 2,
+        x = 2,
+      },
+      Logout = {
+        y = 2,
+        x = 18,
+      },
+      Shutdown = {
+        y = 2,
+        x = 26,
+      },
+    },
+  },
+}

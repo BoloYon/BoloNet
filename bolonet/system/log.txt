@@ -70,3 +70,167 @@
 [Day 1 | 6:17 AM] - [SIGNED OUT 'BOLOYON'.]: UNKNOWN
 [Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
 [Day 1 | 8:55 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:05 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:11 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:23 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:46 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:49 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:06 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:02 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:06 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: Failed login attempt for 'BoloYon'.
+[Day 1 | 6:08 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:05 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: Logged out 'BoloYon'.
+[Day 1 | 6:07 AM] - [SYSTEM]: BoloNet shutdown
+
+[Day 4 | 5:58 PM] - [SYSTEM]: BoloNet started.
+[Day 4 | 6:10 PM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:05 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: Failed login attempt for 'BoloYon'.
+[Day 1 | 6:07 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:15 AM] - [AUTH]: Admin created: BoloYon
+[Day 1 | 6:15 AM] - [AUTH]: New account created: BoloYon
+[Day 1 | 6:27 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:03 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:14 AM] - [AUTH]: Admin created: BoloYon
+[Day 1 | 6:14 AM] - [AUTH]: New account created: BoloYon
+[Day 1 | 6:43 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:03 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:05 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:08 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:04 AM] - [AUTH]: Logged out 'BoloYon'.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:15 AM] - [AUTH]: New account created: IgiToyo
+[Day 1 | 6:29 AM] - [AUTH]: IgiToyo logged in.
+[Day 1 | 9:24 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 9:35 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:00 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
+[Day 1 | 6:01 AM] - [SYSTEM]: BoloNet started.
+[Day 1 | 6:02 AM] - [AUTH]: BoloYon logged in.
