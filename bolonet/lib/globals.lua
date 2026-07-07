@@ -6,5 +6,7 @@ local g = {
     session = require("/bolonet/lib/session"),
     icons = require("/bolonet/lib/iconmanager"),
     files = require("/bolonet/lib/files"),
+    constants = require("/bolonet/lib/constants"),
+    windows = require("/bolonet/lib/windows")
 }
 return g

@@ -1,8 +1,8 @@
 --This is where Users sign in/up or power off terminal
 
-local G = require("/bolonet/lib/globals")
+local G, isSignedIn= ...
 local w, h = term.getSize()
-local isSignedIn = ...
+
 
 
 
@@ -113,7 +113,8 @@ local function login()
             G.ui.CalcCenter("Login Successful. Welcome, ".. user.."!", 0, 0, write, colors.green)
             sleep(1.5)
             G.session.SetUser(user)
-            shell.run("/bolonet/os/desktop.lua")
+
+            G.files.runScript("/bolonet/os/desktop.lua", G)
         else
             G.logger.Log("AUTH", "Failed login attempt for '"..user.."'.")
             G.ui.CalcCenter("Incorrect Password.", 0, 5, write, colors.red)
@@ -227,18 +228,24 @@ local function signInUser()
         pass, signOut = G.ui.Read("*")
         term.setTextColor(colors.white)
 
+        --Run the window that prompts the user if they are sure
         if signOut then
-            G.logger.Log("AUTH", "Logged out '"..user.."'.")
-            G.session.ClearUser()
-            return
+            G.files.runScript("/bolonet/os/logout.lua", G)
          end
 
+        --If signOut is true at this point, then signout was cancelled
+        if signOut then
+            term.setBackgroundColor(colors.black)
+            return signInUser()
+        end
+        
+        --Password checker
         if pass == userPass then
             term.clear()
             G.logger.Log("AUTH", user.." logged in.")
             G.ui.CalcCenter("Login Successful. Welcome back, ".. user.."!", 0, 0, write, colors.green)
             sleep(1.5)
-            shell.run("/bolonet/os/desktop.lua")
+            G.files.runScript("/bolonet/os/desktop.lua", G)
         else
             G.logger.Log("AUTH", "Failed login attempt for '"..user.."'.")
             G.ui.CalcCenter("Incorrect Password.", 0, 5, write, colors.red)
@@ -263,7 +270,7 @@ local function drawMenu()
     local actions = {
     function() login() end,
     function() signUp() end,
-    function() shell.run("/bolonet/os/shutdown.lua") end}
+    function() G.files.runScript("/bolonet/os/shutdown.lua", G) end}
 
     G.ui.Navigate(options, actions, "--Login Page--")
 

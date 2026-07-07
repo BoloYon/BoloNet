@@ -1,37 +1,49 @@
 local ui = {}
 
 --Calculates the center of the terminal and prints
-function ui.CalcCenter(text, xOffset, yOffset, cmd, color)
+function ui.CalcCenter(text, xOffset, yOffset, cmd, color, bg)
     local w, h = term.getSize()
+    local x, y = (w/2 - #text/2 + (xOffset or 0) + 1), (h/2 + yOffset)
+
+    x = math.floor(x)
+    y = math.floor(y)
+
+    term.setBackgroundColor(bg or term.getBackgroundColor())
+    term.setCursorPos(x, y)
+    term.setTextColor(color or colors.white)
 
     if cmd == print then
-        term.setCursorPos(w/2 - #text/2 + (xOffset or 0) + 1, h/2 + yOffset)
-        term.setTextColor(color or colors.white)
         print(text)
-        term.setTextColor(colors.white)
     elseif cmd == write then
-        term.setCursorPos(w/2 - #text/2 + (xOffset or 0) + 1, h/2 + yOffset)
-        term.setTextColor(color or colors.white)
         write(text)
-        term.setTextColor(colors.white)
     end
+
+    term.setTextColor(colors.white)
+    term.setBackgroundColor(colors.black)
+
+    return x, y, #text
 end
 
 --Calculates the HORIZONTAL center only
-function ui.CalcHCenter(text, xOffset, y, cmd, color)
+function ui.CalcHCenter(text, xOffset, y, cmd, color, bg)
     local w = term.getSize()
+    local x = w/2 - #text/2  + (xOffset or 0) + 1
 
+    x = math.floor(x)
+
+    term.setBackgroundColor(bg or term.getBackgroundColor())
+    term.setCursorPos(x, y)
+    term.setTextColor(color or colors.white)
     if cmd == print then
-        term.setCursorPos(w/2 - #text/2  + (xOffset or 0) + 1, y)
-        term.setTextColor(color or colors.white)
         print(text)
-        term.setTextColor(colors.white)
     elseif cmd == write then
-        term.setCursorPos(w/2 - #text/2 + (xOffset or 0) + 1, y)
-        term.setTextColor(color or colors.white)
         write(text)
-        term.setTextColor(colors.white)
     end
+
+    term.setTextColor(colors.white)
+    term.setBackgroundColor(colors.black)
+
+    return x, y, #text
 end
 
 --Helps navigate listed options

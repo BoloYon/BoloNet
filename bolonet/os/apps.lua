@@ -1,13 +1,27 @@
-local G = require("/bolonet/lib/globals")
+local G = ...
 
-G.icons.drawWindowedBackground()
+--Consts
+local W,H = G.constants.W, G.constants.H
+local ROOT = G.constants.ROOT_TERMINAL
 
-while true do
-    local _, button, x, y = os.pullEvent("mouse_click") 
-    if button == 1 then --leftclick
-        local exit = G.icons.clickedExit(x,y)
-        if exit then
-            return
-        end
-    end
+
+--Once drawn, our current terminal is win
+local win = G.windows.createWindow("Apps", term.current(), 1, 1, W, H, ROOT)
+
+
+--Add all necessary globals to the window object
+win.user = G.session.GetUser()
+local isAdmin = G.userF.IsAdmin(win.user)
+
+local iconsTbl = G.icons.getIconsTable()
+if not iconsTbl then
+    iconsTbl = G.files.getTable("/bolonet/system/desktop.db")
+end
+
+win.redrawDesktop = function() G.icons.drawDesktop(ROOT, isAdmin, iconsTbl, win.user) end
+
+
+local rtn = false
+while not rtn do
+    rtn = G.windows.determineEvent(win, os.pullEvent())
 end

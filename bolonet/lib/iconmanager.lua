@@ -53,6 +53,9 @@ iconshandler.icons ={
     }
 }
 
+--For access to the icon table when outside of desktop.lua during runtime
+iconshandler.desktopState = {}
+
 function iconshandler.drawDesktopBackground()
     term.setBackgroundColor(colors.black)
     term.clear()
@@ -65,24 +68,6 @@ function iconshandler.drawDesktopBackground()
 
     term.setBackgroundColor(colors.black)
     term.setTextColor(colors.white)
-end
-
-function iconshandler.drawWindowedBackground()
-    term.setBackgroundColor(colors.black)
-    term.setTextColor(colors.white)
-    term.clear()
-
-    local bg = paintutils.loadImage("/bolonet/assets/windowedbg.nfp")
-
-    if bg then
-        paintutils.drawImage(bg, 1, 1)
-    end
-
-    term.setBackgroundColor(colors.red)
-    term.setTextColor(colors.white)
-    term.setCursorPos(50,1)
-    write("X")
-    term.setBackgroundColor(colors.black)
 end
 
 function iconshandler.formatName(name)
@@ -129,16 +114,30 @@ function iconshandler.drawIcons(isAdmin, tbl, user)
             --Set up cursor position
             term.setBackgroundColor(colors.gray)
             term.setTextColor(colors.white)
+
+            local _, cursY = term.getCursorPos()
+            local _, h = term.getSize()
+
+            if cursY > h - 2 then
+                term.setBackgroundColor(colors.lightGray)
+            end
             
             --Make sure names do not pass respective borders
             local nameT = iconshandler.formatName(icon.name)
             --Safety check
-            if nameT == nil then break end
+            if nameT == nil then return end
 
             --For every line of string in the name table, 
             for i, str in ipairs(nameT) do
                 --Set the cursor pos to under the icon with respect to previous string
                 term.setCursorPos(icon.x, icon.y + icon.h + (i - 1))
+
+                local _, cursY = term.getCursorPos()
+                local _, h = term.getSize()
+
+                if cursY > h - 2 then
+                    term.setBackgroundColor(colors.lightGray)
+                end
                 --If string is 3-4 chars long, just write it out
                 if #str >= 3 then
                     write(str)
@@ -149,15 +148,6 @@ function iconshandler.drawIcons(isAdmin, tbl, user)
             end
         end
     end
-end
-
-function iconshandler.clickedExit(x, y)
-    if x >= 49 and x <= 51 then
-        if y == 1 then
-            return true
-        end
-    end
-    return false
 end
 
 function iconshandler.getClickedIcon(x, y, isAdmin)
@@ -185,16 +175,68 @@ function iconshandler.dragIcon(icon, x, y)
 
 end
 
+function iconshandler.drawIcon(icon)
+    local img = paintutils.loadImage(icon.icon)
 
-function iconshandler.launch(icon)
-    --Will add some extra stuff in the future!
-    shell.run(icon.program)
+    --If it exists, paint it
+    if img then
+        paintutils.drawImage(img, icon.x, icon.y)
+    end
+
+    --Set up cursor position
+    term.setBackgroundColor(colors.gray)
+    term.setTextColor(colors.white)
+            
+    --Make sure names do not pass respective borders
+    local nameT = iconshandler.formatName(icon.name)
+    --Safety check
+    if nameT == nil then return end
+
+    --For every line of string in the name table, 
+    for i, str in ipairs(nameT) do
+        --Set the cursor pos to under the icon with respect to previous string
+        term.setCursorPos(icon.x, icon.y + icon.h + (i - 1))
+
+        local _, cursY = term.getCursorPos()
+        local _, h = term.getSize()
+
+        if cursY > h - 2 then
+            term.setBackgroundColor(colors.lightGray)
+        end
+        --If string is 3-4 chars long, just write it out
+        if #str >= 3 then
+            write(str)
+        --If string is 1-2 chars long, add a space to center
+        else
+            write(" "..str)
+        end
+    end
 end
 
-function iconshandler.drawDesktop(isAdmin, tbl, user)
+function iconshandler.launch(icon, G)
+    --Will add some extra stuff in the future!
+    local app = loadfile(icon.program)
+    if app ~= nil then app(G) end
+end
+
+function iconshandler.setIconsTable(tbl)
+    iconshandler.desktopState.tbl = tbl
+end
+
+function iconshandler.getIconsTable()
+    return iconshandler.desktopState.tbl
+end
+
+function iconshandler.drawDesktop(ROOT, isAdmin, tbl, user)
+    --Helpful when redrawing desktop behind another window
+    local win = term.current()
+    term.redirect(ROOT)
+
     iconshandler.drawDesktopBackground()
     iconshandler.drawIcons(isAdmin, tbl, user)
 
+    --Switch back if needed
+    term.redirect(win)
 end
 
 

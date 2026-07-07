@@ -32,6 +32,13 @@ function files.setTable(path, tbl)
 end
 
 
+function files.runScript(path, globalFuncs, secondaryParam)
+    local script = loadfile(path)
+    if script then
+        script(globalFuncs, secondaryParam)
+    end
+end
+
 
 
 

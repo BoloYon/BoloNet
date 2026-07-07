@@ -12,6 +12,14 @@ local version = ver
 
 term.clear()
 
+--Debugging specific files
+--shell.run("/bolonet/os/apps.lua")
+
+
+
+
+
+
 local function doSplashScreen()
 
 
@@ -19,13 +27,13 @@ local function doSplashScreen()
 
     local logo = paintutils.loadImage("/bolonet/assets/logo.nfp")
     if logo ~= nil then
-        paintutils.drawImage(logo, 1, 1)
+        paintutils.drawImage(logo, 2, 1)
     end
 
 
     term.setBackgroundColor(colors.black)
 
-    G.ui.CalcCenter(splashText, 0, 9, write, colors.purple)
+    G.ui.CalcCenter(splashText, 1, 9, write, colors.purple)
     G.ui.CalcCenter("Press Enter", 0, 10, write, colors.lightGray)
     
 
@@ -42,7 +50,7 @@ local function doSplashScreen()
         userLoggedIn = "true"
     end
 
-    shell.run("/bolonet/os/login.lua", userLoggedIn)
+    G.files.runScript("/bolonet/os/login.lua", G, userLoggedIn)
 end
 
 doSplashScreen()

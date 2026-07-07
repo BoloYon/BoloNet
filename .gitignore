@@ -1,3 +1,6 @@
+#Runtime data
 bolonet/system/log.txt
-bolonet/users/users.db
-bolonet/system/session.db
+*.db
+*.log
+*.bak
+*.tmp
