@@ -1,6 +1,3 @@
-local screenW, screenH = term.getSize()
-
-
 local function translateClicks(win, globalX, globalY)
     --Get win position
     local localX = globalX - win.x + 1
@@ -178,6 +175,8 @@ function windows.updateMiniData(win)
 end
 
 function windows.determineEvent(win, event, button, x, y)
+    local screenW, screenH = win.root.getSize()
+
     --If the left mouse button was clicked
     if event == "mouse_click" and button == 1 then
 
@@ -206,6 +205,12 @@ function windows.determineEvent(win, event, button, x, y)
                         windows.reshapeWindow(win, false)
                     end
                     win.redrawDesktop(win.root, win.isAdmin, win.icons, win.user)
+
+                    --Clamp y ever so slightly
+                    if newY < 1 then
+                        newY = 1
+                    end
+
                     win.term.reposition(newX, newY, win.w, win.h, win.root)
                     windows.drawBorder(win)
                     

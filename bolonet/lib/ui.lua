@@ -126,5 +126,22 @@ function ui.Read(masked) --Masked is a string
     end
 end
 
+function ui.clamp(obj, maxX, maxY)
+    --Clamp the X value, make sure to factor in width
+    if obj.x < 1 then
+        obj.x = 1
+    elseif obj.x + obj.w > maxX then
+        obj.x = maxX - obj.w
+    end
+
+    if obj.y < 1 then
+        obj.y = 1
+    elseif obj.y + obj.h > maxY then
+        obj.y = maxY - obj.h
+    end
+
+    local x, y = obj.x, obj.y
+    return x, y
+end
 
 return ui

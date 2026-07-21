@@ -22,6 +22,13 @@ end
 
 --Use when a funnction needs user
 function session.GetUser()
+    --If file does not exist, force a new one
+    if not fs.exists("/bolonet/system/session.db") then
+        local file = fs.open("/bolonet/system/session.db", "w")
+        if file then file.close() end
+        return
+    end
+
     --Avoid unneeded opening of files
     if currentUser == nil then
         local file = fs.open("/bolonet/system/session.db", "r")

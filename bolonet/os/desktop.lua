@@ -1,5 +1,7 @@
 local G = ...
 local user = G.session.GetUser()
+local isAdmin
+local W, H = G.constants.W, G.constants.H
 
 if user == nil then error("User is nil.", 1) end
 
@@ -47,10 +49,11 @@ local function redrawRegion(x, y, w, h, skippedIcon)
     for _, icon in ipairs(iconTable) do
         local textRowsNew = math.ceil(#skippedIcon.name / 4)
         if icon ~= skippedIcon and rectsOverlap(x, y , w, h + textRows, icon.x, icon.y, icon.w, icon.h + textRowsNew) then
-            G.icons.drawIcon(icon)
+            if not icon.adminOnly or isAdmin then
+                G.icons.drawIcon(icon)
+            end
         end
     end
-    
 end
 
 
@@ -58,7 +61,7 @@ end
 
 
 local function desktop()
-    local isAdmin = G.userF.IsAdmin(user)
+    isAdmin = G.userF.IsAdmin(user)
     while true do
         local tbl = G.files.getTable("/bolonet/system/desktop.db")
         G.icons.setIconsTable(tbl) --Avoid repeated system I/O by storing it during runtime
@@ -75,6 +78,10 @@ local function desktop()
             if icon then
                 local hasDragged = false
                 local clickedIcon = icon
+
+                --Calculate mouse offset on icon (avoid snapping to top left)
+                local offsetX = icon.x - x
+                local offsetY = icon.y - y
             
                 repeat
                     local event, _, x, y = os.pullEvent()
@@ -84,17 +91,25 @@ local function desktop()
                         --Save previous X and Y
                         local prevX = icon.x
                         local prevY = icon.y
+
+                        --Change icon position
+                        G.icons.dragIcon(icon, x + offsetX, y + offsetY) -- offset calced here
+
+                        --Respect screen borders
+                        G.ui.clamp(icon, W + 1, H - 1) --('H - 1' accounts for task bar, ignores text rows)
+
+                        --Redraw the dirty rectangles
+                        redrawRegion(prevX, prevY, icon.h, icon.w, icon)
+
+                        --Continuously redraw the icon
+                        G.icons.drawIcon(icon)
                         
                         hasDragged = true
-                        G.icons.dragIcon(icon,x,y)
-                        redrawRegion(prevX, prevY, icon.h, icon.w, icon)
-                        G.icons.drawIcon(icon)
                         sleep(0.05)
                     
                     --if mouse is let go, save postion and exit the repeat loop
                     elseif event == "mouse_up" then
                         updateInfo(icon)
-
                         break
                     end
                 --repeat forever

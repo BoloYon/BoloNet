@@ -18,7 +18,7 @@ local function isUserValid(user, users)
         G.ui.CalcCenter("Select any key to continue", 0, 5, write, colors.lightBlue)
         os.pullEvent("key")
         return false
-    elseif users[user] then
+    elseif users and users[user] then
         G.ui.CalcCenter("Username already exists.", 0, 3, print, colors.red)
         G.ui.CalcCenter("Select any key to continue", 0, 5, write, colors.lightBlue)
         os.pullEvent("key")

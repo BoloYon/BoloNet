@@ -1,6 +1,15 @@
 local files = {}
 
 function files.getTable(path)
+    --If file does not exist, force a new one
+    if not fs.exists(path) then
+        local file = fs.open(path, "w")
+        if file then file.close() end
+        local tbl = {}
+        return tbl
+    end
+
+
     local file = fs.open(path, "r")
     if file == nil then error("Could not open file: "..path, 2) end
     local content = file.readAll() or ""
